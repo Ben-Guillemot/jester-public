@@ -1,5 +1,5 @@
 # jester-public
-Web site of stoner-rock band Jester Soul. <jester-soul-band.com>
+Monolithic web site of stoner-rock band Jester Soul. <jester-soul-band.com>
 
 ## Language used : 
 
