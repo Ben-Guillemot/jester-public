@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+
+<main class="main">
+  <h2 class="main__title">Le Groupe</h2>
+  <section class="main__section-description">
+    <article class="main__section-description-article">
+      <p class="main__section-description-article-content">
+        <%=group.description%>
+      </p>
+    </article>
+  </section>
+  <aside class="main__aside">
+    <h2 class="main__aside-title">La Jester Family</h2>
+    <div class="main__aside-container">
+      <% for (const member of group.members) { %>
+      <div class="member-div">
+        <img
+          src="<%=member.image%>"
+          alt="Photo de <%=member.name%>"
+          class="member-img"
+        />
+        <h3 class="member-title"><%=member.name%></h3>
+        <p class="member-instrument"><%=member.instrument%></p>
+      </div>
+      <% } %>
+    </div>
+  </aside>
+
+  <%- include('./partials/footer') %>
+

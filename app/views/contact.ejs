@@ -1,0 +1,99 @@
+<%- include('./partials/header') %>
+<main class="main main-contact">
+  <h2 class="main__title">Nous contacter</h2>
+
+  <% if(locals.msg) { %>
+  <p class="msg-sended"><%= msg %> <a href="/" class="home-link">Retour à l'acceuil</a></p>
+  <% } %>
+
+  <section class="main__container">
+    <form action="/contact" method="POST" class="main__container-contact-form">
+      <div class="main__container-contact-form-part-one">
+        <div class="main__container-contact-form-input-container">
+          <label for="firstname" class="main__container-contact-form-label"
+            >Prénom<span class="required">*</span></label
+          >
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Votre prénom"
+            required
+            class="main__container-contact-form-input"
+          />
+        </div>
+        <div class="main__container-contact-form-input-container">
+          <label for="lastname" class="main__container-contact-form-label"
+            >Nom</label
+          >
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Votre nom"
+            class="main__container-contact-form-input"
+          />
+        </div>
+      </div>
+
+      <div class="main__container-contact-form-part-two">
+        <div class="main__container-contact-form-input-container">
+          <label for="email" class="main__container-contact-form-label"
+            >Email<span class="required">*</span></label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Votre email@email.com"
+            required
+            class="main__container-contact-form-input"
+          />
+        </div>
+        <div class="main__container-contact-form-input-container">
+          <label for="tel" class="main__container-contact-form-label"
+            >Téléphone</label
+          >
+          <input
+            type="tel"
+            id="tel"
+            name="tel"
+            pattern="[0-9]{10}"
+            placeholder="06..."
+            class="main__container-contact-form-input"
+          />
+        </div>
+      </div>
+
+      <div
+        class="main__container-contact-form-input-container message-container"
+      >
+        <label
+          for="message"
+          class="main__container-contact-form-label message-label"
+          >Votre message<span class="required">*</span></label
+        >
+        <textarea
+          rows="10"
+          column="30"
+          id="message"
+          name="message"
+          placeholder="Votre message ..."
+          required
+          class="main__container-contact-form-input message-input"
+        ></textarea>
+      </div>
+
+      <div class="submit-button">
+        <button type="submit" class="main__container-contact-form-button">
+          Envoyer
+        </button>
+      </div>
+    </form>
+    <p class="required-params">
+      (<span class="required">*</span>) : Champs obligatoires
+    </p>
+  </section>
+
+  <%- include('./partials/footer') %>
+
